@@ -1,0 +1,228 @@
+﻿
+@{
+    Layout = null;
+}
+
+@{
+    ViewBag.Title = "Newsfeed";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Add padding to containers */
+        .container {
+            padding: 16px;
+            background-color: white;
+        }
+
+       
+
+            
+
+        /* Overwrite default styles of hr */
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom:25px;
+            margin-right:30%;
+        }
+
+        
+
+            
+        /* Add a blue text color to links */
+        a {
+            color: dodgerblue;
+        }
+
+        
+
+        body {
+            margin: 0;
+            font-family: "Lato", sans-serif;
+        }
+
+        .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+            margin: 0 -16px;
+        }
+
+        .col-25 {
+            -ms-flex: 25%; /* IE10 */
+            flex: 25%;
+        }
+
+        .col-50 {
+            -ms-flex: 50%; /* IE10 */
+            flex: 50%;
+        }
+
+        .col-75 {
+            -ms-flex: 75%; /* IE10 */
+            flex: 75%;
+        }
+
+        .col-25,
+        .col-50,
+        .col-75 {
+            padding: 0 16px;
+        }
+
+        .container {
+            background-color: #f2f2f2;
+            padding: 5px 20px 15px 20px;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+        }
+
+        .icon-container {
+            margin-bottom: 20px;
+            padding: 7px 0;
+            font-size: 24px;
+        }
+
+        
+
+
+        .sidebar {
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+
+        
+
+        .sidebar a {
+            display: block;
+            color: black;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+            .sidebar a.active {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            .sidebar a:hover:not(.active) {
+                background-color: #555;
+                color: white;
+            }
+
+        div.content {
+            margin-left: 200px;
+            padding: 1px 16px;
+            height: 100%;
+        }
+        .pagecontent {
+            margin-left: 300px;
+            margin-top: 100px;
+        }
+
+        
+    
+    </style>
+</head>
+<body>
+    @{
+        ViewBag.Title = "Newsfeed";
+    }
+    <div class="sidebar">
+        <div class="pic">
+            <img class="img-responsive" src="https://vignette.wikia.nocookie.net/peaky-blinders/images/9/93/Tommyportrait2.png/revision/latest?cb=20171106170631" alt="Chania" width="460" height="345">
+        </div>
+        <h3> Thomas Shelby</h3>
+        <a class="active" href="#">Newsfeed</a>
+        @Html.ActionLink("Profile", "StudentProfile", "Student")
+        @Html.ActionLink("Messages", "Messages", "Student")
+        @Html.ActionLink("View Teachers", "ViewTeachers", "Student")
+        @Html.ActionLink("Account Settings", "AccountSettings", "Student")
+        @Html.ActionLink("Logout", "Index", "Login")
+    </div>
+
+    <div class="content">
+        <div class="row">
+            <div class="col-75">
+                <div class="pagecontent">
+                    <div class="post">
+                        <label for="sel1">Share with:</label>
+                        <select class="selectpri" id="sel1">
+                            <option>Everyone</option>
+                            <option>Classmates</option>
+                        </select>
+                        <br/>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-camera"></span> Add picture
+                        </a>
+                        <br/>
+                        <textarea class="text-left" rows="5" cols="80"></textarea>
+                        <br/>
+                        <input type="submit" class="btn" value="Post">
+                    </div>
+                    <hr />
+                    <div class="tabs">
+                        
+                        <ul class="nav nav-pills">
+                            <li class="active"><a href="#">Public</a></li>
+                            <li>@Html.ActionLink("Class group", "Index", "Login")</li>
+                        </ul>
+                    </div>
+                    <hr/>
+                    <div class="posts">
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg" class="media-object" style="width:60px">
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading"><a href="#"> Irina Smith </a></h4>
+                                <p class="col-lg-8">Keep calm and know Google can help you find a to fix almost every problem. If not it will tell you who can fix it.</p>
+                            </div>
+                            <br />
+                            <div class="btn-group-sm">
+                                <button class="btn"> Like </button>
+                                <button class="btn"> Comment </button>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXGMOgMyTp39uvLfxz3sG98F1LhKRbp8AUty_Q_2pHI8ZpaxeN4A" class="media-object" style="width:60px">
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading"><a href="#"> John Arthur </a></h4>
+                                <p class="col-lg-8">I don't have goals. Goals are for soccer. I'm not soccer.</p>
+                            </div>
+                            <br />
+                            <div class="btn-group-sm">
+                                <button class="btn"> Like </button>
+                                <button class="btn"> Comment </button>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

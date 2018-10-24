@@ -1,0 +1,272 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .edit {
+            margin-left: 10%;
+        }
+                body {
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+
+                * {
+                    box-sizing: border-box;
+                }
+
+                /* Add padding to containers */
+                .container {
+            padding: 16px;
+            background-color: white;
+        }
+
+                /* Full-width input fields */
+                input[type=text], input[type=password] {
+                    width: 100%;
+                    padding: 15px;
+                    margin: 5px 0 22px 0;
+                    display: inline-block;
+                    border: none;
+                }
+
+                    input[type=text]:focus, input[type=password]:focus {
+                        background-color: #ddd;
+                        outline: none;
+                    }
+
+                /* Overwrite default styles of hr */
+                hr {
+                    border: 1px solid #f1f1f1;
+                    margin-bottom: 25px;
+                }
+
+                /* Set a style for the submit button */
+                .registerbtn {
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 16px 20px;
+                    margin: 8px 0;
+                    border: none;
+                    cursor: pointer;
+                    width: 100%;
+                    opacity: 0.9;
+                }
+
+                    .registerbtn:hover {
+                        opacity: 1;
+                    }
+
+                /* Add a blue text color to links */
+                a {
+                    color: dodgerblue;
+                }
+
+                /* Set a grey background color and center the text of the "sign in" section */
+                .signin {
+                    background-color: #f1f1f1;
+                    text-align: center;
+                }
+
+                body {
+                    margin: 0;
+                    font-family: "Lato", sans-serif;
+                }
+
+                .row {
+                    display: -ms-flexbox; /* IE10 */
+                    display: flex;
+                    -ms-flex-wrap: wrap; /* IE10 */
+                    flex-wrap: wrap;
+                    margin: 0 -16px;
+                }
+
+                .col-25 {
+                    -ms-flex: 25%; /* IE10 */
+                    flex: 25%;
+                }
+
+                .col-50 {
+                    -ms-flex: 50%; /* IE10 */
+                    flex: 50%;
+                }
+
+                .col-75 {
+                    -ms-flex: 75%; /* IE10 */
+                    flex: 75%;
+                }
+
+                .col-25,
+                .col-50,
+                .col-75 {
+                    padding: 0 16px;
+                }
+
+                .container {
+                    width: 80%;
+                    background-color: #f2f2f2;
+                    padding: 5px 20px 15px 20px;
+                    border: 1px solid lightgrey;
+                    border-radius: 3px;
+                }
+
+                .form-control {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    padding: 12px;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                }
+
+                input[type=text] {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    padding: 12px;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                }
+
+                input[type=password] {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    padding: 12px;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                }
+
+                input[type=date] {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    padding: 12px;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                }
+
+                label {
+                    margin-bottom: 10px;
+                    display: block;
+                }
+
+                .icon-container {
+                    margin-bottom: 20px;
+                    padding: 7px 0;
+                    font-size: 24px;
+                }
+
+                .btn {
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 12px;
+                    margin: 10px 0;
+                    border: none;
+                    width: 100%;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    font-size: 17px;
+                }
+
+                    .btn:hover {
+                        background-color: #45a049;
+                    }
+
+                span.price {
+                    float: right;
+                    color: grey;
+                }
+
+
+                .sidebar {
+                    margin: 0;
+                    padding: 0;
+                    width: 200px;
+                    background-color: #f1f1f1;
+                    position: fixed;
+                    height: 100%;
+                    overflow: auto;
+                }
+
+                .registerbtn {
+                    width: 100%;
+                }
+
+                .sidebar a {
+                    display: block;
+                    color: black;
+                    padding: 16px;
+                    text-decoration: none;
+                }
+
+                    .sidebar a.active {
+                        background-color: #4CAF50;
+                        color: white;
+                    }
+
+                    .sidebar a:hover:not(.active) {
+                        background-color: #555;
+                        color: white;
+                    }
+
+                div.content {
+                    margin-left: 200px;
+                    padding: 1px 16px;
+                    height: 100%;
+                }
+    </style>
+</head>
+<body>
+        
+        <div class="sidebar">
+            <div class="pic">
+                <img class="img-responsive" src="https://vignette.wikia.nocookie.net/peaky-blinders/images/9/93/Tommyportrait2.png/revision/latest?cb=20171106170631" alt="Chania" width="460" height="345">
+            </div>
+            <h3> Thomas Shelby</h3>
+            @Html.ActionLink("Newsfeed", "Newsfeed", "Student")
+            @Html.ActionLink("Profile", "StudentProfile", "Student")
+            @Html.ActionLink("Messages", "Messages", "Student")
+            @Html.ActionLink("View Teachers", "ViewTeachers", "Student")
+            <a class="active" href="#">Account Settings</a>
+            @Html.ActionLink("Logout", "Index", "Login")
+        </div>
+
+        <div class="content">
+            <div class="row">
+                <div class="col-75">
+                    <div class="cont">
+                        <div class="edit">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-camera"></span> Update picture
+                            </a>
+                            @Html.ActionLink("ChangePassword", "ChangePassword", "Student")
+                            <br />
+                        </div>
+                       
+                        <form action="/action_page.php">
+                            <div class="container">
+                                
+                                <hr>
+
+                                <label for="email"><b>Change first name</b></label>
+                                <input type="text" value="Thomas" name="FirstName" required>
+                                <label for="email"><b>Change last name</b></label>
+                                <input type="text" value="Shelby" name="LastName" required>
+                                <label for="psw"><b>Change email</b></label>
+                                <input type="text" value="thomas373@yahoo.com" name="Email" required>
+                                <label for="psw-repeat"><b>Change contact number</b></label>
+                                <input type="text" value="+923028090100" name="ContactNumber" required>
+                                <p>
+                                    <hr>
+                                    <button type="submit" class="registerbtn">Confirm Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

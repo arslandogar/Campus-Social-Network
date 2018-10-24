@@ -217,9 +217,11 @@
 <body>
 
     <div class="sidebar">
-        @Html.ActionLink("Add Student", "Index", "Admin")
-        @Html.ActionLink("Add Class", "AddClass", "Admin")
-        <a class="active" href="#home">Add Teacher</a>
+        @Html.ActionLink("Newsfeed", "Newsfeed", "Student")
+        <a class="active" href="#">Profile</a>      
+        @Html.ActionLink("Messages", "Messages", "Student")
+        @Html.ActionLink("View Teachers", "ViewTeachers", "Student")
+        @Html.ActionLink("Account Settings", "AccountSettings", "Student")
         @Html.ActionLink("Logout", "Index", "Login")
     </div>
 
@@ -236,10 +238,31 @@
                             <input type="text" placeholder="Enter FirstName" name="FirstName" required>
                             <label for="email"><b>Last name</b></label>
                             <input type="text" placeholder="Enter LastName" name="LastName" required>
+                            <label for="psw-repeat"><b>Registeration number</b></label>
+                            <input type="text" placeholder="YYYY-XX-000" name="RegisterationNumber" required>
                             <label for="psw"><b>Email</b></label>
                             <input type="text" placeholder="Enter Email" name="Email" required>
                             <label for="psw-repeat"><b>Contact number</b></label>
                             <input type="text" placeholder="Enter ContactNumber" name="ContactNumber" required>
+                            <label for="psw-repeat"><b>Password</b></label>
+                            <input type="password" placeholder="CreatePassword" name="CreatePassword" required>
+                            <label for="psw-repeat"><b>Birthday</b></label>
+                            <input type="date" name="bday" required>
+                            <label for="sel1">Select class</label>
+                            <select class="form-control" id="sel1">
+                                <option></option>
+                                <option>Chemical 17 B</option>
+                                <option>Computer Science 16 B</option>
+                                <option>Mechanical 16 A</option>
+                            </select>
+                            <p>
+                                <input class="w3-radio" type="radio" name="gender" value="male" checked>
+                                <label>Male</label>
+                            </p>
+                            <p>
+                                <input class="w3-radio" type="radio" name="gender" value="female">
+                                <label>Female</label>
+                            </p>
                             <p>
                                 <hr>
                                 <button type="submit" class="registerbtn">Register</button>
